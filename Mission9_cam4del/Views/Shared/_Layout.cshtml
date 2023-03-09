@@ -4,47 +4,72 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Mission9_cam4del</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap-social.css" rel="stylesheet" />
+    @*<link rel="stylesheet" href="~/css/site.css" />*@
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Bookstore</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
+    <div class="bg-dark text-white p-2">
+        <span class="navbar-brand m-lg-2">Bookstore</span>
+    </div>
+
+    <div class="row m-1 p-1">
+        <div id="categories" class="col-3">
+            <vc:categories></vc:categories>
+        </div>
+
+        <div class="col-9">
+            <div>
+                @RenderBody()
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+        </div>
     </div>
 
     @*Bootstrap added for pagination*@
-<div page-model="@Model.PageInfo" page-action="Index" page-classes-enabled="true"
-        page-class="btn" page-class-normal="btn-outline-dark"
-        page-class-selected="btn-primary" class="btn-group pull-right m-1">
-</div>
+    <div page-model="@Model.PageInfo" page-action="Index" page-classes-enabled="true"
+            page-class="btn" page-class-normal="btn-outline-dark"
+            page-class-selected="btn-primary" class="btn-group pull-right m-1">
+    </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - Mission9_cam4del - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <footer class="bg-dark text-center text-white">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+            <!-- Section: Social media -->
+            <section class="mb-4">
+                <!-- Facebook -->
+                <a class="btn btn-facebook m-1" href="#!" role="button">
+                    Facebook
+                </a>
+
+                <!-- Twitter -->
+                <a class="btn btn-twitter m-1" href="#!" role="button">
+                    Twitter
+                </a>
+
+                <!-- Google -->
+                <a class="btn btn-google m-1" href="#!" role="button">
+                    Google
+                </a>
+
+                <!-- Instagram -->
+                <a class="btn btn-instagram m-1" href="#!" role="button">
+                    Instagram
+                </a>
+
+                <!-- Linkedin -->
+                <a class="btn btn-linkedin m-1" href="#!" role="button">
+                    Linkedin
+                </a>
+            </section>
+            <!-- Section: Social media -->
         </div>
+        <!-- Grid container -->
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2023 Copyright:
+        </div>
+        <!-- Copyright -->
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
