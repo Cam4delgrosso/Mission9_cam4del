@@ -8,12 +8,22 @@
     <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="~/lib/bootstrap-social.css" rel="stylesheet" />
     @*<link rel="stylesheet" href="~/css/site.css" />*@
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" integrity="sha512-ZYg+hQvLlM0W9C3P6vTpes5LmJ66G2EsroxDNzwD6qiulckldb29eD9I672HL2X+LH5nRhY1sQqZLJGB+aUUPg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+    @*Add the cart icon to the top of the page*@
     <div class="bg-dark text-white p-2">
-        <span class="navbar-brand m-lg-2">Bookstore</span>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col navbar-brand">BOOKSTORE</div>
+                <div class="col-6 text-end">
+                    <vc:cart-summary />
+                </div>
+            </div>
+        </div>
     </div>
 
+    @*Display the categories*@
     <div class="row m-1 p-1">
         <div id="categories" class="col-3">
             <vc:categories></vc:categories>
@@ -26,12 +36,7 @@
         </div>
     </div>
 
-    @*Bootstrap added for pagination*@
-    <div page-model="@Model.PageInfo" page-action="Index" page-classes-enabled="true"
-            page-class="btn" page-class-normal="btn-outline-dark"
-            page-class-selected="btn-primary" class="btn-group pull-right m-1">
-    </div>
-
+    @*Footer*@
     <footer class="bg-dark text-center text-white">
         <!-- Grid container -->
         <div class="container p-4 pb-0">
